@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX_SIZE 100 
+void display(int arr[], int size) {
+    if (size == 0) { printf("Array is empty!\n"); return; }
+    printf("Array: ");
+    for (int i = 0; i < size; i++) printf("%d ", arr[i]);
+    printf("\n");
+}
+void insert(int arr[], int *size, int el, int pos) {
+    if (*size >= MAX_SIZE || pos < 0 || pos > *size) { printf("Invalid position or full!\n"); return; }
+    for (int i = *size; i > pos; i--) arr[i] = arr[i - 1];
+    arr[pos] = el; (*size)++;
+}
+void delete(int arr[], int *size, int pos) {
+    if (*size <= 0 || pos < 0 || pos >= *size) { printf("Invalid position or empty!\n"); return; }
+    for (int i = pos; i < *size - 1; i++) arr[i] = arr[i + 1];
+    (*size)--;
+}
+int main() {
+    int arr[MAX_SIZE], size = 0, choice, el, pos;
+    return 0;
+}
